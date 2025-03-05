@@ -1,0 +1,127 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9); /* Semi-transparent black */
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(234,238,203);
+  font-size: 36px;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+  transition: opacity 0.5s ease-out; /* Smooth fade-out */
+}
+
+.overlay-text {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: textSequence 6s ease-out forwards;
+  position: absolute;
+}
+
+/* Animation for text sequence */
+@keyframes textSequence {
+  0% { opacity: 0; transform: translateY(50px); } /* Start hidden */
+  10% { opacity: 1; transform: translateY(0); } /* Fade in */
+  40% { opacity: 1; } /* Stay visible */
+  50% { opacity: 0; transform: translateY(50px); } /* Fade out */
+  60% { opacity: 0; transform: translateY(50px); } /* Stay hidden */
+  70% { opacity: 1; transform: translateY(0); } /* Second text fade in */
+  100% { opacity: 1; } /* Stay visible */
+}
+
+/* Hide overlay when clicked */
+.overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mute-button {
+  position: fixed;
+  top: 20px;
+  right: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-weight: 100;
+  font-size: 24px;
+  color: rgb(234,238,203);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.mute-button:hover {
+  opacity: 0.7;
+}
+
+
+
+.help-button {
+  position: fixed;
+  top: 20px;
+  left: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: regular;
+  font-weight: 100;
+  font-size: 20px;
+  color: rgb(212,212,212);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.help-button:hover {
+  opacity: 0.7;
+}
+
+
+
+#instructions-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(29,29,29,0.9);
+  z-index: 1001;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+#instructions-content h2 {
+  font-size: 36px;
+  color: rgb(212,212,212);
+  margin-bottom: 20px;
+font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+#instructions-content ul {
+  list-style-type: none;
+  padding: 0;
+text-align: left
+}
+
+#instructions-content ul li {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: rgb(212,212,212);
+  font-family: Arial, Helvetica, sans-serif;
+}
+

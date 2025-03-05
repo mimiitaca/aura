@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+  </head>
+  
+  <body>
+    
+  <div class="overlay" id="overlay">
+  <div class="overlay-text" id="overlayText">Welcome</div>
+</div>
+
+<button class="mute-button" id="muteButton">Mute</button>
+
+    
+<button class="help-button" id="helpButton">Help?</button>
+
+
+    <div id="instructions-overlay" onclick="closeInstructionsOverlay()">
+  <div id="instructions-content">
+    <h2>Instructions
+    </h2>
+    <ul>
+      <li>Press the keys A, S, D, F, G, H, J, K, L to play sounds.</li>
+      <li>Click and drag over the "Dawn" and "Falling rain" lines to control the volume of each.</li>
+      <li>Click "Mute/Unmute" to set volume to 0.</li>
+    </ul>
+  </div>
+</div>
+    <main>
+    </main>
+    <script src="sketch.js"></script>
+
+    <script>
+      // Function to show the instructions overlay
+      const helpButton = document.getElementById('helpButton');
+      const instructionsOverlay = document.getElementById('instructions-overlay');
+      
+      helpButton.addEventListener('click', () => {
+        instructionsOverlay.style.display = 'flex'; // Show overlay
+      });
+
+      // Function to close the instructions overlay
+      function closeInstructionsOverlay() {
+        instructionsOverlay.style.display = 'none'; // Hide overlay
+      }
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
